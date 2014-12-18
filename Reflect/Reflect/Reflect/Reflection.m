@@ -138,7 +138,7 @@
 #pragma mark - Class To Data
 + (NSDictionary *)dictionaryFromObject:(NSObject *)object{
     NSMutableDictionary *finalDict = [NSMutableDictionary dictionary];
-    if (!object) {
+    if (object) {
         NSDictionary *dic = [Reflection dictionaryFromObject:object class:NSStringFromClass([object class])];
         [finalDict addEntriesFromDictionary:dic];
         
