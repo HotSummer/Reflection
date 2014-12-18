@@ -11,7 +11,7 @@
 @interface ReflectionProperty : NSObject
 
 /**
- *  获取Class的属性的类型。当Class没有这个属性的时候，返回nil。获取类型的顺序时，如果在本类找不到， 就从父类中查找，依次向上查找
+ *  获取Class的属性的类型。当Class没有这个属性的时候，返回nil。获取类型的顺序时，如果在本类找不到， 就从父类中查找，依次向上查找，直到NSObject为止
  *
  *  @param class       对象class
  *  @param propertyName 属性名称

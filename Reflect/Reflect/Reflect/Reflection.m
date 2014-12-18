@@ -93,7 +93,7 @@
             [object setValue:objectParam forKey:propertyName];
         }
     }else if (type.length > 0){//属性存在，但是类型不一致
-        NSObject *obj = [Reflection objectFromContent:value className:type];//将数据变成type的对象
+        NSObject *obj = [Reflection objectFromContent:value className:type];//将数据变成type的对象(NSDictionary到class)
         if ([obj isKindOfClass:NSClassFromString(type)]) {//如果类型正确，则赋值
             [object setValue:obj forKey:propertyName];
         }else{//否则报错
@@ -138,14 +138,16 @@
 #pragma mark - Class To Data
 + (NSDictionary *)dictionaryFromObject:(NSObject *)object{
     NSMutableDictionary *finalDict = [NSMutableDictionary dictionary];
-    NSDictionary *dic = [Reflection dictionaryFromObject:object class:NSStringFromClass([object class])];
-    [finalDict addEntriesFromDictionary:dic];
-    
-    Class supplerClass = class_getSuperclass([object class]);
-    while (supplerClass != [NSObject class]) {
-        NSDictionary *dic = [Reflection dictionaryFromObject:object class:NSStringFromClass(supplerClass)];
-        supplerClass = class_getSuperclass(supplerClass);
+    if (!object) {
+        NSDictionary *dic = [Reflection dictionaryFromObject:object class:NSStringFromClass([object class])];
         [finalDict addEntriesFromDictionary:dic];
+        
+        Class supplerClass = class_getSuperclass([object class]);
+        while (supplerClass != [NSObject class]) {
+            NSDictionary *dic = [Reflection dictionaryFromObject:object class:NSStringFromClass(supplerClass)];
+            supplerClass = class_getSuperclass(supplerClass);
+            [finalDict addEntriesFromDictionary:dic];
+        }
     }
     return finalDict;
 }
@@ -160,7 +162,7 @@
         for (i = 0; i < outCount; i++) {
             objc_property_t property = properties[i];
             NSString *name = [[NSString alloc] initWithCString:property_getName(property) encoding:NSUTF8StringEncoding];
-            NSString *type = [ReflectionProperty type:[object class] propertyName:name];//[[NSString alloc] initWithCString:getPropertyType(property) encoding:NSUTF8StringEncoding];
+            NSString *type = [ReflectionProperty type:[object class] propertyName:name];
             SEL selector = NSSelectorFromString(name);
             if ([object respondsToSelector:selector]) {//保证取到共有属性
                 id value = [object valueForKey:name];//[object performSelector:selector];
