@@ -32,7 +32,7 @@
 + (BOOL)matchType:(Class)class propertyName:(NSString *)propertyName value:(id)value;
 
 /**
- *  判断类的数组属性中数据类型是否一致
+ *  判断类的数组属性中数据类型与value类型是否一致
  *
  *  @param class        类名
  *  @param arrayName    数组名

@@ -26,6 +26,8 @@
 		4E632D6D1A2F32810062EBD6 /* TestArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E632D6C1A2F32800062EBD6 /* TestArray.m */; };
 		4E6824B31A30874F00395EB9 /* ReflectionProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6824B21A30874F00395EB9 /* ReflectionProperty.m */; };
 		4E6D67F01A3095EA001E1315 /* TestD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6D67EF1A3095EA001E1315 /* TestD.m */; };
+		4EEB5C0D1A4AB7E1009EBDE5 /* ReflectionDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EEB5C0C1A4AB7E1009EBDE5 /* ReflectionDataTest.m */; };
+		4EEB5C101A4ABB24009EBDE5 /* TestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EEB5C0F1A4ABB24009EBDE5 /* TestData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,10 @@
 		4E6824B21A30874F00395EB9 /* ReflectionProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionProperty.m; sourceTree = "<group>"; };
 		4E6D67EE1A3095EA001E1315 /* TestD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestD.h; sourceTree = "<group>"; };
 		4E6D67EF1A3095EA001E1315 /* TestD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestD.m; sourceTree = "<group>"; };
+		4EEB5C0B1A4AB7E1009EBDE5 /* ReflectionDataTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectionDataTest.h; sourceTree = "<group>"; };
+		4EEB5C0C1A4AB7E1009EBDE5 /* ReflectionDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionDataTest.m; sourceTree = "<group>"; };
+		4EEB5C0E1A4ABB24009EBDE5 /* TestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestData.h; sourceTree = "<group>"; };
+		4EEB5C0F1A4ABB24009EBDE5 /* TestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,8 @@
 				4E632D6C1A2F32800062EBD6 /* TestArray.m */,
 				4E6D67EE1A3095EA001E1315 /* TestD.h */,
 				4E6D67EF1A3095EA001E1315 /* TestD.m */,
+				4EEB5C0E1A4ABB24009EBDE5 /* TestData.h */,
+				4EEB5C0F1A4ABB24009EBDE5 /* TestData.m */,
 			);
 			path = ReflectTests;
 			sourceTree = "<group>";
@@ -209,6 +217,8 @@
 			children = (
 				4E632D681A2EB6980062EBD6 /* ReflectionTest.h */,
 				4E632D691A2EB6980062EBD6 /* ReflectionTest.m */,
+				4EEB5C0B1A4AB7E1009EBDE5 /* ReflectionDataTest.h */,
+				4EEB5C0C1A4AB7E1009EBDE5 /* ReflectionDataTest.m */,
 			);
 			path = ReflectionTest;
 			sourceTree = "<group>";
@@ -327,10 +337,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EEB5C0D1A4AB7E1009EBDE5 /* ReflectionDataTest.m in Sources */,
 				4E632D3D1A2DAFB40062EBD6 /* TestB.m in Sources */,
 				4E632D6A1A2EB6980062EBD6 /* ReflectionTest.m in Sources */,
 				4E632D5A1A2DC9650062EBD6 /* ReflectExceptionTest.m in Sources */,
 				4E632D561A2DBCE20062EBD6 /* ReflectionTypeTest.m in Sources */,
+				4EEB5C101A4ABB24009EBDE5 /* TestData.m in Sources */,
 				4E632D4F1A2DB5CF0062EBD6 /* TestC.m in Sources */,
 				4E632D6D1A2F32810062EBD6 /* TestArray.m in Sources */,
 				4E6D67F01A3095EA001E1315 /* TestD.m in Sources */,

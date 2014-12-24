@@ -38,8 +38,8 @@
 /**
  *  将json数组反射成对象数组
  *
- *  @param object    对象
- *  @param arrayName 数组名
+ *  @param object    对象 用于抛出异常用，所要赋值的对象名
+ *  @param arrayName 数组名，用于抛出异常用，所要赋值的数组名
  *  @param contents  json数组
  *  @param className json数组里面类名
  *

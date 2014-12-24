@@ -11,6 +11,7 @@
 #import "ReflectionTypeTest.h"
 #import "ReflectExceptionTest.h"
 #import "ReflectionTest.h"
+#import "ReflectionDataTest.h"
 
 @interface ReflectTests : XCTestCase
 
@@ -39,7 +40,9 @@
 //    [ReflectExceptionTest test];
     
     //ReflectionTest 测试
-    [ReflectionTest test];
+//    [ReflectionTest test];
+    
+    [ReflectionDataTest test];
 }
 
 - (void)testPerformanceExample {

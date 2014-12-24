@@ -37,7 +37,8 @@
                     [ReflectionException cantReflectionArray:NSStringFromClass([*object class])];
                 }else if(dic.count == 1) {//数组里面是自定义的对象
                     NSString *className = [dic allValues][0];
-                    NSArray *datas = [Reflection parseObjectInArray:*object arrayName:@"array" contents:(NSArray *)content className:className];
+                    NSString *arrayName = [dic allKeys][0];
+                    NSArray *datas = [Reflection parseObjectInArray:*object arrayName:arrayName contents:(NSArray *)content className:className];
                     *object = [NSArray arrayWithArray:datas];
                 }else{//数组里面不是自定义的对象
                     *object = [NSArray arrayWithArray:(NSArray *)content];
@@ -45,10 +46,20 @@
             }else{
                 *object = [NSArray arrayWithArray:(NSArray *)content];
             }
+        }else{
+            if ([*object respondsToSelector:@selector(classForArrayProperty)]) {
+                NSDictionary *dic = [*object classForArrayProperty];
+                if (dic.count > 1) {//数组里面是自定义的对象不止一个，这时无法解析
+                    [ReflectionException cantReflectionArray:NSStringFromClass([*object class])];
+                }else if(dic.count == 1) {//数组里面是自定义的对象
+                    NSString *className = [dic allValues][0];
+                    NSString *arrayName = [dic allKeys][0];
+                    NSArray *datas = [Reflection parseObjectInArray:*object arrayName:arrayName contents:(NSArray *)content className:className];
+                    [*object setValue:datas forKey:arrayName];
+                }else{//数组里面不是自定义的对象
+                }
+            }
         }
-        
-    }else{
-        *object = content;
     }
 }
 
