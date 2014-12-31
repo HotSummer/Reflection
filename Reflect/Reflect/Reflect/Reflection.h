@@ -11,7 +11,7 @@
 @interface Reflection : NSObject
 
 /**
- *  将content数据解析成对象
+ *  将content数据解析成对象，遍历dictionary，将值setValue:forKey到对象当中
  *
  *  @param content 数据
  *  @param object  对象指针
@@ -36,16 +36,25 @@
 + (void)setArrayToObject:(NSObject **)object propertyName:(NSString *)property data:(NSArray *)array;
 
 /**
- *  将json数组反射成对象数组
+ *  将json数组反射成对象的数组
  *
  *  @param object    对象 用于抛出异常用，所要赋值的对象名
  *  @param arrayName 数组名，用于抛出异常用，所要赋值的数组名
  *  @param contents  json数组
- *  @param className json数组里面类名
  *
  *  @return 对象数组
  */
-+ (NSArray *)parseObjectInArray:(NSObject *)object arrayName:(NSString *)arrayName contents:(NSArray *)contents className:(NSString *)className;
++ (NSArray *)parseObjectArrayFromArray:(NSObject *)object arrayName:(NSString *)arrayName contents:(NSArray *)contents;
+
+/**
+ *  将数组中数据根据className解析成对应的对象，放到数组中返回
+ *
+ *  @param data      数组中数据
+ *  @param className 数组中元素对应的类名，如果为nil，则放回原数组
+ *
+ *  @return 解析后的数组
+ */
++ (NSArray *)parseArrayData:(NSArray *)data classNameInArray:(NSString *)className;
 
 /**
  *  将jsonDictionary转化为NSObject

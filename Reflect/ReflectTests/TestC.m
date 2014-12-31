@@ -10,4 +10,16 @@
 
 @implementation TestC
 
+- (NSDictionary *)classForArrayProperty{
+//    NSDictionary *dic = nil;
+//    if ([super respondsToSelector:@selector(classForArrayProperty)]) {
+//        dic = [super performSelector:@selector(classForArrayProperty) withObject:nil];
+//    }
+//    NSDictionary *dicSelf = @{@"arrD":@"TestD"};
+//    NSMutableDictionary *mutableDic = [NSMutableDictionary dictionaryWithDictionary:dicSelf];
+//    [mutableDic addEntriesFromDictionary:dic];
+    
+    return @{@"arrD":@"TestD"};
+}
+
 @end

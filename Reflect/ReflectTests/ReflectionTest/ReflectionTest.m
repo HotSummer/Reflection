@@ -71,24 +71,39 @@
 //    NSLog(@"testArray : %d", testArray.count);
     
 //+ (NSDictionary *)dictionaryFromObject:(NSObject *)object
-    TestD *cbject = [[TestD alloc] init];
-    cbject.name = @"sda";
-    TestB *b1 = [[TestB alloc] init];
-    b1.number = @12;
-    TestB *b2 = [[TestB alloc] init];
-    b2.number = @123;
-    cbject.arr = @[b1, b2];
-    cbject.cname = @"asda";
+//    TestD *cbject = [[TestD alloc] init];
+//    cbject.name = @"sda";
+//    TestB *b1 = [[TestB alloc] init];
+//    b1.number = @12;
+//    TestB *b2 = [[TestB alloc] init];
+//    b2.number = @123;
+//    cbject.arr = @[b1, b2];
+//    cbject.cname = @"asda";
 //    NSDictionary *dicCObject = [Reflection dictionaryFromObject:cbject class:@"TestA"];
 //    NSDictionary *dicCObject1 = [Reflection dictionaryFromObject:cbject];
 //    NSDictionary *dicCObject2 = [Reflection dictionaryFromObject:cbject class:@"TestAB"];
     
-    TestB *bc = [[TestB alloc] init];
-    bc.number = @213123;
-    cbject.b = bc;
+//    TestB *bc = [[TestB alloc] init];
+//    bc.number = @213123;
+//    cbject.b = bc;
+//    
+//    cbject.dname = @"ddddd";
+//    NSDictionary *dicCObject3 = [Reflection dictionaryFromObject:cbject class:@"TestA"];
     
-    cbject.dname = @"ddddd";
-    NSDictionary *dicCObject3 = [Reflection dictionaryFromObject:cbject class:@"TestA"];
+//    NSArray *arrD = @[@{@"number":@12}, @{@"number":@22}, @{@"number":@22}];
+//    TestC *c = [[TestC alloc] init];
+//    [Reflection setArrayToObject:&c propertyName:@"arr" data:arrD];
+
+    /*
+     @property(nonatomic, strong) NSString *name;
+     @property(nonatomic, strong) NSNull *null;//无意义的变量
+     @property(nonatomic) int age;
+     @property(nonatomic, strong) NSArray *arr;
+     @property(nonatomic, strong) TestB *b;
+     */
+    NSArray *arr = @[@{@"name":@"xxx", @"age":@12, @"b":@{@"number":@12}, @"arr":@[@{@"number":@12}, @{@"number":@13}]}, @{@"name":@"summer", @"age":@26, @"b":@{@"number":@25}, @"arr":@[@{@"number":@26}, @{@"number":@27}, @{@"number":@28}]}];
+    NSArray *objects = [Reflection parseArrayData:arr classNameInArray:@"TestA"];
+    
 }
 
 @end

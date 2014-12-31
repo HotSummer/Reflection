@@ -17,6 +17,7 @@
     
     TestData *testData = [[TestData alloc] init];
     
+    NSArray *arrValue = [Reflection parseObjectArrayFromArray:testData arrayName:@"items" contents:arr];
     [Reflection objectFromContent:arr object:&testData];
 }
 

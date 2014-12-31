@@ -21,7 +21,7 @@
 + (BOOL)hasKey:(Class)class propertyName:(NSString *)propertyName;
 
 /**
- *  类型不匹配:对象的key属性类型跟value的类型是否匹配
+ *  类型不匹配:对象的key属性类型跟value的类型是否匹配。如果value是dictionary,则默认是匹配的，否者查看类型是否一致
  *
  *  @param class 对象Class
  *  @param key    待判断的属性名

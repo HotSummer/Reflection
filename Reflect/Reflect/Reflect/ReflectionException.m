@@ -35,7 +35,11 @@
     if ([ReflectionProperty basicType:type]) {//是基础数据类型 eg:@"i", @"l", @"f"
         canMatch = [ReflectionException basicMatchRule:value];
     }else{//id类型的判断
-        canMatch = [ReflectionException idMatchRule:value class:NSClassFromString(type)];
+        if ([value isKindOfClass:[NSDictionary class]]) {
+            canMatch = YES;
+        }else{
+            canMatch = [ReflectionException idMatchRule:value class:NSClassFromString(type)];
+        }
     }
     
     if (!canMatch) {

@@ -36,9 +36,9 @@
                 if (dic.count > 1) {//数组里面是自定义的对象不止一个，这时无法解析
                     [ReflectionException cantReflectionArray:NSStringFromClass([*object class])];
                 }else if(dic.count == 1) {//数组里面是自定义的对象
-                    NSString *className = [dic allValues][0];
+//                    NSString *className = [dic allValues][0];
                     NSString *arrayName = [dic allKeys][0];
-                    NSArray *datas = [Reflection parseObjectInArray:*object arrayName:arrayName contents:(NSArray *)content className:className];
+                    NSArray *datas = [Reflection parseObjectArrayFromArray:*object arrayName:arrayName contents:(NSArray *)content];
                     *object = [NSArray arrayWithArray:datas];
                 }else{//数组里面不是自定义的对象
                     *object = [NSArray arrayWithArray:(NSArray *)content];
@@ -52,11 +52,12 @@
                 if (dic.count > 1) {//数组里面是自定义的对象不止一个，这时无法解析
                     [ReflectionException cantReflectionArray:NSStringFromClass([*object class])];
                 }else if(dic.count == 1) {//数组里面是自定义的对象
-                    NSString *className = [dic allValues][0];
+//                    NSString *className = [dic allValues][0];
                     NSString *arrayName = [dic allKeys][0];
-                    NSArray *datas = [Reflection parseObjectInArray:*object arrayName:arrayName contents:(NSArray *)content className:className];
+                    NSArray *datas = [Reflection parseObjectArrayFromArray:*object arrayName:arrayName contents:(NSArray *)content];
                     [*object setValue:datas forKey:arrayName];
                 }else{//数组里面不是自定义的对象
+                    
                 }
             }
         }
@@ -116,9 +117,7 @@
 + (void)setArrayToObject:(NSObject **)object propertyName:(NSString *)property data:(NSArray *)array{
     if ([ReflectionProperty type:[*object class] propertyName:property].length > 0) {//object有这个属性
         if ([*object respondsToSelector:@selector(classForArrayProperty)]) {//指定数组里面的数据类型，则解析后赋值
-            NSDictionary *dic = [*object classForArrayProperty];
-            NSString *className = dic[property];
-            NSArray *arr = [Reflection parseObjectInArray:*object arrayName:property contents:array className:className];
+            NSArray *arr = [Reflection parseObjectArrayFromArray:*object arrayName:property contents:array];
             [*object setValue:arr forKey:property];
         }else{//没有指定数组里面的数据类型，则直接赋值
             [*object setValue:array forKey:property];
@@ -126,24 +125,46 @@
     }
 }
 
-+ (NSArray *)parseObjectInArray:(NSObject *)object arrayName:(NSString *)arrayName contents:(NSArray *)contents className:(NSString *)className{
++ (NSArray *)parseObjectArrayFromArray:(NSObject *)object arrayName:(NSString *)arrayName contents:(NSArray *)contents{
     NSMutableArray *arrRecursion = [[NSMutableArray alloc] init];
     for (id content in contents) {
-        if ([content isKindOfClass:NSClassFromString(className)]) {
-            Class theClass = NSClassFromString(className);
-            NSObject *objectContent = [[theClass alloc] init];
-            [Reflection objectFromContent:content object:&objectContent];
-            [arrRecursion addObject:objectContent];
-        }else{
-            NSObject *obj = [Reflection objectFromContent:content className:className];
-            if ([obj isKindOfClass:NSClassFromString(className)]) {//如果类型正确，则添加到数据
-                [arrRecursion addObject:obj];
-            }else{//否则报错
-                [ReflectionException matchArrayType:[object class] arrayName:arrayName classInArry:className value:obj];
+        NSString *className = @"";
+        if ([object respondsToSelector:@selector(classForArrayProperty)]) {
+            NSDictionary *dic = [object classForArrayProperty];
+            className = dic[arrayName];
+        }
+        if ([ReflectionException hasKey:[object class] propertyName:arrayName]) {
+            if ([content isKindOfClass:NSClassFromString(className)]) {
+                Class theClass = NSClassFromString(className);
+                NSObject *objectContent = [[theClass alloc] init];
+                [Reflection objectFromContent:content object:&objectContent];
+                [arrRecursion addObject:objectContent];
+            }else{
+                NSObject *obj = [Reflection objectFromContent:content className:className];
+                if ([obj isKindOfClass:NSClassFromString(className)]) {//如果类型正确，则添加到数据
+                    [arrRecursion addObject:obj];
+                }else{//否则报错
+                    [ReflectionException matchArrayType:[object class] arrayName:arrayName classInArry:className value:obj];
+                }
             }
         }
     }
     return arrRecursion;
+}
+
++ (NSArray *)parseArrayData:(NSArray *)data classNameInArray:(NSString *)className{
+    if (className.length == 0) {
+        return data;
+    }else{
+        NSMutableArray *objectsArray = [NSMutableArray array];
+        for (id content in data) {
+            NSObject *object = [Reflection objectFromContent:content className:className];
+            if (object) {
+                [objectsArray addObject:object];
+            }
+        }
+        return objectsArray;
+    }
 }
 
 #pragma mark - Class To Data

@@ -12,5 +12,6 @@
 @interface TestC : TestA
 
 @property(nonatomic, strong) NSString *cname;
+@property(nonatomic, strong) NSArray *arrD;
 
 @end

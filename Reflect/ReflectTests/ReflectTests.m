@@ -40,9 +40,9 @@
 //    [ReflectExceptionTest test];
     
     //ReflectionTest 测试
-//    [ReflectionTest test];
+    [ReflectionTest test];
     
-    [ReflectionDataTest test];
+//    [ReflectionDataTest test];
 }
 
 - (void)testPerformanceExample {
