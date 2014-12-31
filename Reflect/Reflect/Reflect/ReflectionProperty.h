@@ -39,4 +39,14 @@
  */
 + (BOOL)basicType:(NSString *)type;
 
+/**
+ *  class是否响应sel
+ *
+ *  @param class class
+ *  @param sel   sel
+ *
+ *  @return YES or NO
+ */
++ (BOOL)classResponseToSel:(Class)class sel:(SEL)sel;
+
 @end

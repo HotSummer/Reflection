@@ -15,4 +15,5 @@
  *  调用该方法返回模型array属性中存放对象的class
  */
 - (NSDictionary *)classForArrayProperty;
+
 @end

@@ -18,14 +18,17 @@
     if (type.length > 0) {
         return YES;
     }else{
+        if (![ReflectionProperty classResponseToSel:class sel:NSSelectorFromString(propertyName)]) {
 #ifdef ShowException
-        NSString *strException = [NSString stringWithFormat:@"%@.%@ not found", NSStringFromClass(class), propertyName];
-        UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:strException message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
-        [alertview show];
-        
-        NSLog(@"%@", strException);
+            NSString *strException = [NSString stringWithFormat:@"%@.%@ not found", NSStringFromClass(class), propertyName];
+            UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:strException message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            [alertview show];
+            
+            NSLog(@"%@", strException);
 #endif
-        return NO;
+            return NO;
+        }
+        return YES;
     }
 }
 

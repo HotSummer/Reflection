@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E54090C1A53FBF800EBCD1F /* ReadValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E54090B1A53FBF800EBCD1F /* ReadValue.m */; };
+		4E5409141A53FC0700EBCD1F /* A.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E54090F1A53FC0700EBCD1F /* A.m */; };
+		4E5409151A53FC0700EBCD1F /* B.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5409111A53FC0700EBCD1F /* B.m */; };
+		4E5409161A53FC0700EBCD1F /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5409131A53FC0700EBCD1F /* Test.m */; };
 		4E632CFF1A2C71730062EBD6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E632CFE1A2C71730062EBD6 /* main.m */; };
 		4E632D021A2C71730062EBD6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E632D011A2C71730062EBD6 /* AppDelegate.m */; };
 		4E632D051A2C71730062EBD6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E632D041A2C71730062EBD6 /* ViewController.m */; };
@@ -42,6 +46,15 @@
 
 /* Begin PBXFileReference section */
 		4E5408BE1A5397D200EBCD1F /* ReflectionKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectionKeyValue.h; sourceTree = "<group>"; };
+		4E54090A1A53FBF800EBCD1F /* ReadValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadValue.h; sourceTree = "<group>"; };
+		4E54090B1A53FBF800EBCD1F /* ReadValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadValue.m; sourceTree = "<group>"; };
+		4E54090E1A53FC0700EBCD1F /* A.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A.h; sourceTree = "<group>"; };
+		4E54090F1A53FC0700EBCD1F /* A.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A.m; sourceTree = "<group>"; };
+		4E5409101A53FC0700EBCD1F /* B.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = B.h; sourceTree = "<group>"; };
+		4E5409111A53FC0700EBCD1F /* B.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = B.m; sourceTree = "<group>"; };
+		4E5409121A53FC0700EBCD1F /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		4E5409131A53FC0700EBCD1F /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
+		4E5409171A53FCF900EBCD1F /* ReflectHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectHeader.h; sourceTree = "<group>"; };
 		4E632CF91A2C71730062EBD6 /* Reflect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reflect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E632CFD1A2C71730062EBD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E632CFE1A2C71730062EBD6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -104,6 +117,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E54090D1A53FC0700EBCD1F /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				4E54090E1A53FC0700EBCD1F /* A.h */,
+				4E54090F1A53FC0700EBCD1F /* A.m */,
+				4E5409101A53FC0700EBCD1F /* B.h */,
+				4E5409111A53FC0700EBCD1F /* B.m */,
+				4E5409121A53FC0700EBCD1F /* Test.h */,
+				4E5409131A53FC0700EBCD1F /* Test.m */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		4E632CF01A2C71720062EBD6 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +176,7 @@
 		4E632D151A2C71730062EBD6 /* ReflectTests */ = {
 			isa = PBXGroup;
 			children = (
+				4E54090D1A53FC0700EBCD1F /* Test */,
 				4E632D671A2EB6840062EBD6 /* ReflectionTest */,
 				4E632D571A2DC9430062EBD6 /* ReflectExceptionTest */,
 				4E632D501A2DBC640062EBD6 /* ReflectTypeTest */,
@@ -182,6 +209,8 @@
 		4E632D221A2C720E0062EBD6 /* Reflect */ = {
 			isa = PBXGroup;
 			children = (
+				4E54090A1A53FBF800EBCD1F /* ReadValue.h */,
+				4E54090B1A53FBF800EBCD1F /* ReadValue.m */,
 				4E632D611A2DE8670062EBD6 /* NSObject+Reflection.h */,
 				4E632D621A2DE8670062EBD6 /* NSObject+Reflection.m */,
 				4E632D261A2C72610062EBD6 /* Reflection.h */,
@@ -192,6 +221,7 @@
 				4E6824B11A30874F00395EB9 /* ReflectionProperty.h */,
 				4E6824B21A30874F00395EB9 /* ReflectionProperty.m */,
 				4E5408BE1A5397D200EBCD1F /* ReflectionKeyValue.h */,
+				4E5409171A53FCF900EBCD1F /* ReflectHeader.h */,
 			);
 			path = Reflect;
 			sourceTree = "<group>";
@@ -332,6 +362,7 @@
 				4E632D281A2C72610062EBD6 /* Reflection.m in Sources */,
 				4E632D631A2DE8670062EBD6 /* NSObject+Reflection.m in Sources */,
 				4E632CFF1A2C71730062EBD6 /* main.m in Sources */,
+				4E54090C1A53FBF800EBCD1F /* ReadValue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,14 +371,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EEB5C0D1A4AB7E1009EBDE5 /* ReflectionDataTest.m in Sources */,
+				4E5409151A53FC0700EBCD1F /* B.m in Sources */,
 				4E632D3D1A2DAFB40062EBD6 /* TestB.m in Sources */,
 				4E632D6A1A2EB6980062EBD6 /* ReflectionTest.m in Sources */,
+				4E5409141A53FC0700EBCD1F /* A.m in Sources */,
 				4E632D5A1A2DC9650062EBD6 /* ReflectExceptionTest.m in Sources */,
 				4E632D561A2DBCE20062EBD6 /* ReflectionTypeTest.m in Sources */,
 				4EEB5C101A4ABB24009EBDE5 /* TestData.m in Sources */,
 				4E632D4F1A2DB5CF0062EBD6 /* TestC.m in Sources */,
 				4E632D6D1A2F32810062EBD6 /* TestArray.m in Sources */,
 				4E6D67F01A3095EA001E1315 /* TestD.m in Sources */,
+				4E5409161A53FC0700EBCD1F /* Test.m in Sources */,
 				4E632D191A2C71730062EBD6 /* ReflectTests.m in Sources */,
 				4E632D3A1A2DAFA60062EBD6 /* TestA.m in Sources */,
 			);

@@ -9,7 +9,6 @@
 #ifndef Reflect_ReflectionDefine_h
 #define Reflect_ReflectionDefine_h
 
-
 #define ShowException
 
 #endif

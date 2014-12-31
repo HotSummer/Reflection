@@ -93,4 +93,8 @@ static const char* getPropertyType(objc_property_t property) {
     return NO;
 }
 
++ (BOOL)classResponseToSel:(Class)class sel:(SEL)sel{
+    return class_respondsToSelector(class, sel);
+}
+
 @end
