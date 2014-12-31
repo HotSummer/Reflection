@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E5408BD1A53974A00EBCD1F /* NSObject+NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5408BC1A53974A00EBCD1F /* NSObject+NSArray.m */; };
 		4E632CFF1A2C71730062EBD6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E632CFE1A2C71730062EBD6 /* main.m */; };
 		4E632D021A2C71730062EBD6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E632D011A2C71730062EBD6 /* AppDelegate.m */; };
 		4E632D051A2C71730062EBD6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E632D041A2C71730062EBD6 /* ViewController.m */; };
@@ -42,8 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4E5408BB1A53974A00EBCD1F /* NSObject+NSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSArray.h"; sourceTree = "<group>"; };
-		4E5408BC1A53974A00EBCD1F /* NSObject+NSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSArray.m"; sourceTree = "<group>"; };
 		4E5408BE1A5397D200EBCD1F /* ReflectionKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectionKeyValue.h; sourceTree = "<group>"; };
 		4E632CF91A2C71730062EBD6 /* Reflect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reflect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E632CFD1A2C71730062EBD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -194,8 +191,6 @@
 				4E632D601A2DCA240062EBD6 /* ReflectionDefine.h */,
 				4E6824B11A30874F00395EB9 /* ReflectionProperty.h */,
 				4E6824B21A30874F00395EB9 /* ReflectionProperty.m */,
-				4E5408BB1A53974A00EBCD1F /* NSObject+NSArray.h */,
-				4E5408BC1A53974A00EBCD1F /* NSObject+NSArray.m */,
 				4E5408BE1A5397D200EBCD1F /* ReflectionKeyValue.h */,
 			);
 			path = Reflect;
@@ -330,7 +325,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E5408BD1A53974A00EBCD1F /* NSObject+NSArray.m in Sources */,
 				4E632D2B1A2C72970062EBD6 /* ReflectionException.m in Sources */,
 				4E632D051A2C71730062EBD6 /* ViewController.m in Sources */,
 				4E6824B31A30874F00395EB9 /* ReflectionProperty.m in Sources */,
